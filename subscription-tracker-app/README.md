@@ -18,6 +18,7 @@
     - The subscriptions array will display the type of service
     - The subscriptions array will display the due date for payment of the service 
 - Once a new subscription is created we will push that to the subscriptions array 
+- We want to be able to delete a subscription service from the subscriptions array 
 
 
 ### Endpoints 
@@ -37,4 +38,5 @@
         - subTableRow.js (functional)
         
 ### Wireframe 
-![ ](screenshots/ComponentStructure.png "Component Structure")
+<img src="./screenshots/Components.png">
+<img src="./screenshots/Wireframe.png">
