@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./reset.css";
+import "./App.css";
+import Header from './components/Header'
+import Table from './components/Table'
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInput: "",
+      subscriptions: [],
+    };
+    this.addSubscription = this.addSubscription.bind(this)
+    this.editSubscription = this.editSubscription.bind(this)
+    this.deleteSubscription = this.deleteSubscription.bind(this)
+  }
+
+  componentDidMount(){
+    axios.get('/api/subscriptions').then(res => {
+      this.setState({subscriptions: res.data})
+    })
+  }
+
+  addSubscription(name, price, type, dueDate){
+    const body = {name, price, type, dueDate}
+    axios.post('/api/subscriptions', body).then(res => {
+      this.setState({
+        subscriptions: res.data
+      })
+    })
+  }
+
+  editSubscription(id, newPrice, newDueDate ){
+    const body = {newPrice, newDueDate}
+    axios.put(`/api/subscriptions/${id}`, body).then(res => {
+      this.setState({subscriptions: res.data})
+    })
+  }
+
+  deleteSubscription(id){
+    axios.delete(`/api/subscriptions/${id}`).then(res => {
+      this.setState({
+        subscriptions: res.data
+      })
+    })
+  }
+
+  render() {
+    return <div className="App">
+      <Header />
+      <Table subscriptions={this.state.subscriptions}
+      addSubscription={this.addSubscription}
+      editSubscription={this.editSubscription}
+      deleteSubscription={this.deleteSubscription}
+      />
+    </div>;
+  }
 }
 
 export default App;
