@@ -4,6 +4,7 @@ import "./App.css";
 import Header from './components/Header'
 import Table from './components/Table'
 import axios from 'axios'
+import SearchBar from "./components/searchBar"
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,9 @@ class App extends Component {
   editSubscription(id, newPrice, newDueDate ){
     const body = {newPrice, newDueDate}
     axios.put(`/api/subscriptions/${id}`, body).then(res => {
-      this.setState({subscriptions: res.data})
+      this.setState({
+        subscriptions: res.data
+      })
     })
   }
 
@@ -50,7 +53,9 @@ class App extends Component {
   render() {
     return <div className="App">
       <Header />
-      <Table subscriptions={this.state.subscriptions}
+      <SearchBar />
+      <Table className="tableComponent" 
+      subscriptions={this.state.subscriptions}
       addSubscription={this.addSubscription}
       editSubscription={this.editSubscription}
       deleteSubscription={this.deleteSubscription}

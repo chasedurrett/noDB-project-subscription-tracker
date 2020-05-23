@@ -34,9 +34,13 @@ class Totals extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Total Subscriptions: {this.state.totalCount}</h2>
-        <h2>Total Cost: {this.state.totalCost}</h2>
+      <div className="totalsContainer">
+        <div className="totalCountContainer">
+          <h2>Total Subscriptions: {this.state.totalCount}</h2>
+        </div>
+        <div className="totalCostContainer">
+          <h2>Total Cost: ${this.state.totalCost}</h2>
+        </div>
       </div>
     );
   }

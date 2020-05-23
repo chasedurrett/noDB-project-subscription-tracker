@@ -3,8 +3,8 @@ import Totals from './Totals'
 
 function Header() {
     return (
-    <div>
-        <h1>Subscription Tracker</h1>
+    <div className="header">
+        <h1 className="subscriptionTracker">Subscription Tracker</h1>
         <Totals />
     </div>
     )
