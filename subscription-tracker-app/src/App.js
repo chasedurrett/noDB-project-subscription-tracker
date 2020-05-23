@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Table from './components/Table'
 import axios from 'axios'
 import SearchBar from "./components/searchBar"
+import ChartComp from './components/Chart'
 
 class App extends Component {
   constructor(props) {
@@ -53,13 +54,14 @@ class App extends Component {
   render() {
     return <div className="App">
       <Header />
-      <SearchBar />
+     {/* <SearchBar /> */}
       <Table className="tableComponent" 
       subscriptions={this.state.subscriptions}
       addSubscription={this.addSubscription}
       editSubscription={this.editSubscription}
       deleteSubscription={this.deleteSubscription}
       />
+      <ChartComp />
     </div>;
   }
 }

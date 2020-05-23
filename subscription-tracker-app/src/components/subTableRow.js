@@ -65,7 +65,7 @@ class SubTableRow extends Component {
               </form>
             )}
           </td>
-          <td className='tableCell'>
+          <td className='tableCell' id='iconCell'>
             <img className="deleteIcon"
               onClick={() => this.props.deleteSubscription(id)}
               alt="delete"
@@ -149,7 +149,7 @@ class SubTableRow extends Component {
           </form>
         )}
 
-        <table id="subscriptionsTable">
+        <table className="subscriptionsTable">
           <thead className="tableHead">
             <tr className="tableRowHeaders">
               <th className="tableHeader">Name</th>

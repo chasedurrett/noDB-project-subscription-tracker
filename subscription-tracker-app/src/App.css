@@ -6,66 +6,225 @@
 
 .App {
   text-align: center;
+  background-color: #e8eff5;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
-.header{
+.header {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 35vh;
   flex-wrap: wrap;
 }
-.subscriptionTracker{
-  background-color: cyan;
+.subscriptionTracker {
   width: 100%;
   height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2.3rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 5
-  00;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #525252;
 }
-.totalsContainer{
-  background-color: darkgreen;
-  height: 20vh;
+
+
+.totalsContainer {
+  height: 30vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.totalCountContainer, .totalCostContainer{
-  height: 13vh;
-  width: 13vw;
-  border-radius: 10px;
-}
-.totalCountContainer{
-  background-image: linear-gradient(to bottom right, red, yellow);
-}
-.totalCostContainer{
-  background-image: linear-gradient(to bottom right, rgb(0, 4, 255), rgb(255, 102, 0));
-}
-
-.searchBar{
+.totalsLimiter {
+  height: 20vh;
+  width: 50%;
   display: flex;
-  width: 100%;
+  justify-content: space-around;
 }
-.subTableRow{
+.totalCountContainer,
+.totalCostContainer {
+  height: 13vh;
+  width: 11vw;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: #e8eff5;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  transition: all 400ms;
+  font-size: 2rem;
+  color: #727272;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.totalCountContainer:hover {
+  transform: scale(0.96);
+}
+
+.totalCostContainer:hover {
+  transform: scale(0.96);
+}
+
+.searchBar {
   width: 100%;
   height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subTableRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 60vh;
 }
 
-
-
-.tableBody{
-  margin: 25px;
-  border: solid black 2px;
+.subscriptionsTable {
+  height: 40vh;
+  width: 60%;
+  border-radius: 10px;
+  display: inline-block;
+  overflow: auto;
 }
-.tableCell{
-  border: solid rgba(167, 131, 131, 0.637) 1px;
-  padding-right: 30px;
-  padding-bottom: 10px;
+
+.addSubscriptionButton {
+  width: 6vw;
+  height: 4vh;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background-color: #e8eff5;
+  color: #727272;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
+}
+
+.addSubscriptionButton:hover {
+  transform: scale(0.97);
+  transition: all 400ms;
+  box-shadow: inset 7px 7px 15px #bbcfda, inset -4px -4px 13px #fff,
+    4px 4px 8px rgba(209, 217, 230, 0.2), -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+.addSubscriptionForm {
+  width: 60%;
+  height: 4vh;
+  background-color: #e8eff5;
+  margin: 30px;
+}
+
+.cancelButton,
+.submitButton {
+  width: 5vw;
+  height: 3vh;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: #e8eff5;
+  color: #727272;
+  margin-left: 5px;
+  border-radius: 8px;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
+}
+.cancelButton:hover,
+.submitButton:hover {
+  transform: scale(0.98);
+  transition: all 400ms;
+  box-shadow: inset 7px 7px 15px #bbcfda, inset -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+
+.addInput {
+  height: 3vh;
+  background-color: #e8eff5;
+  border: none;
+  border-bottom: 1px solid #727272;
+  margin: 0px 5px;
+}
+
+.editSubscriptionForm {
+  width: 18vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancelEditButton, .submitEditButton {
+  width: 4vw;
+  height: 2.5vh;
+  padding: 0 .5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.4rem;
+  text-transform: uppercase;
+  background-color: #e8eff5;
+  color: #727272;
+  margin-left: 5px;
+  border-radius: 8px;
+  box-shadow: 7px 7px 15px #bbcfda9d, -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.096),
+    inset -8px -8px 8px rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
+}
+
+.editInput {
+  height: 2.5vh;
+  width: 5.7vw;
+  margin: 0 5px;
+  font-size: .7rem;
+  background-color: #e8eff5;
+  border: none;
+  border-bottom: 1px solid #727272;
+}
+.deleteIcon,
+.editIcon {
+  height: 2vh;
+  margin: auto;
+  transition: all 400ms;
+}
+.deleteIcon:hover {
+  transform: scale(0.8);
+}
+.tableHead {
+  position: sticky;
+}
+
+.tableHeader {
+  font-family: "Roboto";
+  color: #727272;
+}
+
+.tableBody {
+  margin: 40px;
+}
+.tableCell {
+  border-bottom: 1px solid #7272729a;
+  padding: 15px;
+  margin: auto;
+  width: 20%;
+  color: #4e4e4e;
+  font-family: "Roboto";
 }
