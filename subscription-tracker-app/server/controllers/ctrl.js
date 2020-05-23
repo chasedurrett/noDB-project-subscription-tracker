@@ -1,10 +1,10 @@
 let subscriptions = [
-  { id: 0, name: "Spotify", type: "music", price: 9.99, dueDate: "July 1st" },
-  { id: 1, name: "Soundcloud", type: "music", price: 9.99, dueDate: "July 1st" },
-  { id: 2, name: "Amazon", type: "Shopping", price: 10, dueDate: "July 1st" },
+  { id: 0, name: "Spotify", type: "music", price: 8.99, dueDate: "July 1st" },
+  { id: 1, name: "Soundcloud", type: "music", price: 3.99, dueDate: "July 1st" },
+  { id: 2, name: "Amazon", type: "Shopping", price: 100, dueDate: "July 1st" },
   { id: 3, name: "Netflix", type: "Entertainment", price: 12.99, dueDate: "July 1st" }
 ];
-let id = 1;
+let id = 4;
 
 module.exports = {
   getSubscriptions: (req, res) => {

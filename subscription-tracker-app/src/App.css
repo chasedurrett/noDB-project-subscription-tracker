@@ -12,6 +12,7 @@
   width: 100vw;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 .header {
   display: flex;
@@ -92,12 +93,20 @@
 }
 
 .subscriptionsTable {
-  height: 40vh;
-  width: 60%;
+  height: 80vh;
+  width: 70%;
   border-radius: 10px;
   display: inline-block;
   overflow: auto;
+  background-color: #e8eff5;
+  box-shadow: 7px 7px 15px #bbcfda, -4px -4px 13px #fff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
 }
+
+
 
 .addSubscriptionButton {
   width: 6vw;
@@ -124,7 +133,7 @@
     4px 4px 8px rgba(209, 217, 230, 0.2), -8px -8px 8px rgba(255, 255, 255, 0.2);
 }
 .addSubscriptionForm {
-  width: 60%;
+  width: 70%;
   height: 4vh;
   background-color: #e8eff5;
   margin: 30px;
@@ -205,16 +214,22 @@
   margin: auto;
   transition: all 400ms;
 }
+.sortIcon{
+  height: 1.4vh;
+  width: 1vw;
+}
 .deleteIcon:hover {
   transform: scale(0.8);
 }
 .tableHead {
-  position: sticky;
+  border-bottom: 1px solid ;
+  height: 5vh;
 }
 
 .tableHeader {
   font-family: "Roboto";
   color: #727272;
+  padding: 10px 0px;
 }
 
 .tableBody {
@@ -227,4 +242,15 @@
   width: 20%;
   color: #4e4e4e;
   font-family: "Roboto";
+}
+
+.tableRows:nth-child(even){
+  background-color: #bbcfda5d;
+}
+.chartContainer{
+  width: 100%;
+  background-color: #e8eff5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

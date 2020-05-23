@@ -12,6 +12,7 @@ class SubTableRow extends Component {
       price: 0,
       type: "",
       dueDate: "",
+      subscriptions: this.props.subscriptions,
     };
     this.props = {
       subscriptions: this.props.subscriptions,
@@ -25,14 +26,14 @@ class SubTableRow extends Component {
     return this.props.subscriptions.map((element, index) => {
       const { id, name, price, type, dueDate } = element;
       return (
-        <tr key={index}>
-          <td className='tableCell'>{name}</td>
-          <td className='tableCell'>${price}</td>
-          <td className='tableCell'>{type}</td>
-          <td className='tableCell'>{dueDate}</td>
+        <tr className="tableRows" key={index}>
+          <td className="tableCell">{name}</td>
+          <td className="tableCell">${price}</td>
+          <td className="tableCell">{type}</td>
+          <td className="tableCell">{dueDate}</td>
           <td className="tableCell editIcon">
             {!this.state.isEditing ? (
-              <img 
+              <img
                 className="editIcon"
                 onClick={() => this.toggleEdit()}
                 alt="edit"
@@ -40,18 +41,26 @@ class SubTableRow extends Component {
               />
             ) : (
               <form className="editSubscriptionForm">
-                <input className="editInput"
-                  placeholder="New Price.."
+                <input
+                  className="editInput"
+                  placeholder="Price.."
                   name="newPrice"
                   onChange={(e) => this.handleEditSubscription(e)}
                 />
-                <input className="editInput"
-                  placeholder="New Due-Date.."
+                <input
+                  className="editInput"
+                  placeholder="Due-Date.."
                   name="newDueDate"
                   onChange={(e) => this.handleEditSubscription(e)}
                 />
-                <button className="cancelEditButton" onClick={() => this.toggleEdit()}>Cancel</button>
-                <button className="submitEditButton"
+                <button
+                  className="cancelEditButton"
+                  onClick={() => this.toggleEdit()}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="submitEditButton"
                   onClick={() =>
                     this.props.editSubscription(
                       id,
@@ -65,8 +74,9 @@ class SubTableRow extends Component {
               </form>
             )}
           </td>
-          <td className='tableCell' id='iconCell'>
-            <img className="deleteIcon"
+          <td className="tableCell" id="iconCell">
+            <img
+              className="deleteIcon"
               onClick={() => this.props.deleteSubscription(id)}
               alt="delete"
               src="https://img.icons8.com/material-sharp/24/000000/delete-sign.png"
@@ -76,7 +86,6 @@ class SubTableRow extends Component {
       );
     });
   }
-
 
   handleUserInput(e) {
     this.setState({
@@ -101,40 +110,58 @@ class SubTableRow extends Component {
     });
   }
 
+  toggleSortPrice(e) {
+    const { subscriptions } = this.props;
+    let sortedSubscriptions = subscriptions.reverse();
+    let subs = sortedSubscriptions.sort((a, b) => a.price > b.price);
+    this.setState({
+      subscriptions: subs,
+    });
+  }
+
   render() {
     console.table(this.props.subscriptions);
     return (
       <div className="subTableRow">
         {!this.state.isAdding ? (
-          <button className="addSubscriptionButton" onClick={() => this.toggleAdd()}>Add</button>
+          <button
+            className="addSubscriptionButton"
+            onClick={() => this.toggleAdd()}
+          >
+            Add
+          </button>
         ) : (
           <form className="addSubscriptionForm">
             <input
-            className="addInput"
+              className="addInput"
               placeholder="Name..."
               name="name"
               onChange={(e) => this.handleUserInput(e)}
             />
             <input
-            className="addInput"
+              className="addInput"
               placeholder="Price..."
               name="price"
+             
               onChange={(e) => this.handleUserInput(e)}
             />
             <input
-            className="addInput"
+              className="addInput"
               placeholder="Type..."
               name="type"
               onChange={(e) => this.handleUserInput(e)}
             />
             <input
-            className="addInput"
+              className="addInput"
               placeholder="Due-Date..."
               name="dueDate"
               onChange={(e) => this.handleUserInput(e)}
             />
-            <button className="cancelButton" onClick={() => this.toggleAdd()}>Cancel</button>
-            <button className="submitButton"
+            <button className="cancelButton" onClick={() => this.toggleAdd()}>
+              Cancel
+            </button>
+            <button
+              className="submitButton"
               onClick={() =>
                 this.props.addSubscription(
                   this.state.name,

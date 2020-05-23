@@ -27,6 +27,7 @@ class App extends Component {
 
   addSubscription(name, price, type, dueDate){
     const body = {name, price, type, dueDate}
+    
     axios.post('/api/subscriptions', body).then(res => {
       this.setState({
         subscriptions: res.data
@@ -61,7 +62,7 @@ class App extends Component {
       editSubscription={this.editSubscription}
       deleteSubscription={this.deleteSubscription}
       />
-      <ChartComp />
+     {/* <ChartComp subscriptions={this.state.subscriptions}/> */}
     </div>;
   }
 }

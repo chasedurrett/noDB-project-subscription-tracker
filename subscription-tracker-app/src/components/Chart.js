@@ -1,15 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import Chart from "react-apexcharts";
 
-
-class ChartComp extends Component{
-    render(){
-        return(
-            <div className="comparisonChart">
-                <h1>chart goes hereeeeeee</h1>
-            </div>
-        )
-    }
+class ChartComp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: {
+        chart: {
+          id: "basic-bar",
+        },
+        xaxis: {
+          categories: [
+            "Your Monthly Subscription Bill",
+            "National Per Month Average",
+          ],
+        },
+      },
+      series: [
+        {
+          name: "Dollars",
+          data: [44, 237.33],
+        },
+      ],
+    };
+  }
+  render() {
+    return (
+      <div className="chartContainer">
+        <div className="barGraph">
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type="bar"
+          width="400"
+        />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default ChartComp
+export default ChartComp;

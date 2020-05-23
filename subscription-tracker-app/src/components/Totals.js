@@ -31,7 +31,6 @@ class Totals extends Component {
       totalCost: totalPrice,
     });
   }
-
   render() {
     return (
       <div className="totalsContainer">
