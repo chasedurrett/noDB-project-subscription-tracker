@@ -29,8 +29,8 @@ class SubTableRow extends Component {
         <tr className="tableRows" key={index}>
           <td className="tableCell">{name}</td>
           <td className="tableCell">${price}</td>
-          <td className="tableCell">{type}</td>
-          <td className="tableCell">{dueDate}</td>
+          <td className="tableCell typeCell">{type}</td>
+          <td className="tableCell dueDateCell">{dueDate}</td>
           <td className="tableCell editIcon">
             {!this.state.isEditing ? (
               <img
@@ -181,8 +181,8 @@ class SubTableRow extends Component {
             <tr className="tableRowHeaders">
               <th className="tableHeader">Name</th>
               <th className="tableHeader">Price</th>
-              <th className="tableHeader">Type</th>
-              <th className="tableHeader">Due-Date</th>
+              <th className="tableHeader typeHeader">Type</th>
+              <th className="tableHeader dueDateHeader">Due-Date</th>
             </tr>
           </thead>
           <tbody className="tableBody">{this.renderTableData()}</tbody>

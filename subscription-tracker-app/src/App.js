@@ -23,6 +23,7 @@ class App extends Component {
     axios.get('/api/subscriptions').then(res => {
       this.setState({subscriptions: res.data})
     })
+    .catch(err => console.log(err))
   }
 
   addSubscription(name, price, type, dueDate){
@@ -32,6 +33,7 @@ class App extends Component {
       this.setState({
         subscriptions: res.data
       })
+      .catch(err => console.log(err))
     })
   }
 
