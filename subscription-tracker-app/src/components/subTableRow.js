@@ -35,6 +35,7 @@ class SubTableRow extends Component {
             {!this.state.isEditing ? (
               <img
                 className="editIcon"
+          
                 onClick={() => this.toggleEdit()}
                 alt="edit"
                 src="https://img.icons8.com/material-rounded/24/000000/edit.png"
@@ -142,7 +143,6 @@ class SubTableRow extends Component {
               className="addInput"
               placeholder="Price..."
               name="price"
-             
               onChange={(e) => this.handleUserInput(e)}
             />
             <input
