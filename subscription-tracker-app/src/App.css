@@ -127,7 +127,7 @@
 }
 .addSubscriptionForm {
   width: 70%;
-  height: 7.2vh;
+  height: 7vh;
   background-color: #e8eff5;
   margin: 30px;
 }
@@ -195,7 +195,8 @@
   transition: all 400ms;
 }
 
-.cancelEditButton:hover, .submitEditButton:hover{
+.cancelEditButton:hover,
+.submitEditButton:hover {
   transform: scale(0.9);
 }
 
@@ -222,7 +223,7 @@
   transform: scale(0.8);
   cursor: pointer;
 }
-.editIcon{
+.editIcon {
   cursor: pointer;
 }
 .tableHead {

@@ -25,7 +25,7 @@ class Totals extends Component {
   handleTotalPrice() {
     const totalPrice = this.state.subscriptions.reduce((acc, element) => {
       let price = Number(element.price);
-      return +((acc + price).toFixed(2));
+      return +(acc + price).toFixed(2);
     }, 0);
     this.setState({
       totalCost: totalPrice,
@@ -35,12 +35,12 @@ class Totals extends Component {
     return (
       <div className="totalsContainer">
         <div className="totalsLimiter">
-        <div className="totalCountContainer">
-          <h2>{this.state.totalCount}</h2>
-        </div>
-        <div className="totalCostContainer">
-          <h2>${this.state.totalCost}</h2>
-        </div>
+          <div className="totalCountContainer">
+            <h2>{this.state.totalCount}</h2>
+          </div>
+          <div className="totalCostContainer">
+            <h2>${this.state.totalCost}</h2>
+          </div>
         </div>
       </div>
     );

@@ -1,10 +1,21 @@
 let subscriptions = [
   { id: 0, name: "Spotify", type: "music", price: 8.99, dueDate: "July 1st" },
-  { id: 1, name: "Soundcloud", type: "music", price: 3.99, dueDate: "July 1st" },
-  { id: 2, name: "Amazon", type: "Shopping", price: 100, dueDate: "July 1st" },
-  { id: 3, name: "Netflix", type: "Entertainment", price: 12.99, dueDate: "July 1st" }
+  {
+    id: 1,
+    name: "Soundcloud",
+    type: "music",
+    price: 3.99,
+    dueDate: "July 1st",
+  },
+  {
+    id: 2,
+    name: "Amazon",
+    type: "Shopping",
+    price: 10.99,
+    dueDate: "July 1st",
+  },
 ];
-let id = 4;
+let id = 3;
 
 module.exports = {
   getSubscriptions: (req, res) => {
@@ -21,7 +32,7 @@ module.exports = {
 
   editSubscription: (req, res) => {
     const { subscription_id } = req.params;
-    const {newPrice, newDueDate } = req.body;
+    const { newPrice, newDueDate } = req.body;
     const index = subscriptions.findIndex(
       (index) => index.id === +subscription_id
     );
