@@ -127,7 +127,7 @@
 }
 .addSubscriptionForm {
   width: 70%;
-  height: 7vh;
+  height: 7.15vh;
   background-color: #e8eff5;
   margin: 30px;
 }
@@ -285,8 +285,8 @@
     height: 9vh;
   }
   .addSubscriptionButton {
-    width: 12vw;
-    height: 7vh;
+    width: 25vw;
+    height: 13vh;
   }
   .subscriptionTracker {
     font-size: 1.7rem;
@@ -298,8 +298,11 @@
     margin-top: 100px;
   }
   .editSubscriptionForm {
-    width: 100%;
-    height: 30vh;
+    width: 100px;
+    height: 50vh;
+  }
+  .editIcon{
+    display: none;
   }
   .cancelButton,
   .submitButton {
@@ -307,14 +310,25 @@
     height: 5vh;
   }
   .typeCell,
-  .dueDateCell,
-  .typeHeader,
-  .dueDateHeader {
+  .typeHeader {
     display: none;
   }
   .addInput {
     margin: 0px 0px;
     height: 5vh;
     border-bottom: none;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .addSubscriptionForm{
+    height: 60vh;
+  }
+  .submitButton, .cancelButton {
+    width: 40vw;
+  }
+  .addSubscriptionButton{
+    width: 25vw;
+    height: 13vh
   }
 }
