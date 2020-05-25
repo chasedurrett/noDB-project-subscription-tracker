@@ -35,7 +35,6 @@
 - App.js (stateful: userInput, subscriptions array)
   - Header.js (functional)
     - Totals.js (stateful: subscriptions total count, subscriptions total cost)
-  - searchBar.js (functional)
   - Table.js (functional)
     - subTableHeader.js (functional)
     - subTableRow.js (Stateful: userInput for editing array)
