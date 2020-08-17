@@ -35,7 +35,6 @@ class SubTableRow extends Component {
             {!this.state.isEditing ? (
               <img
                 className="editIcon"
-          
                 onClick={() => this.toggleEdit()}
                 alt="edit"
                 src="https://img.icons8.com/material-rounded/24/000000/edit.png"

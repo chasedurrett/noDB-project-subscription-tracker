@@ -1,9 +1,9 @@
 let subscriptions = [
-  { id: 0, name: "Spotify", type: "music", price: 8.99, dueDate: "July 1st" },
+  { id: 0, name: "Spotify", type: "Music", price: 8.99, dueDate: "July 1st" },
   {
     id: 1,
     name: "Soundcloud",
-    type: "music",
+    type: "Music",
     price: 3.99,
     dueDate: "July 1st",
   },

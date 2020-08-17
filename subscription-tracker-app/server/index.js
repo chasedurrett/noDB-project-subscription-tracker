@@ -5,6 +5,8 @@ const ctrl = require("./controllers/ctrl");
 
 app.use(express.json());
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.get("/api/subscriptions", ctrl.getSubscriptions);
 app.post("/api/subscriptions", ctrl.addSubscription);
 app.put("/api/subscriptions/:subscription_id", ctrl.editSubscription);
